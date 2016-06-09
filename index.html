@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"> </script>
+	<style>
+		.tab{display:block;}
+		.close{display: none;}
+	</style>
+</head>
+<body>
+
+<div class="section">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+</div>
+
+<div class="section">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+
+</div>
+
+<div class="section">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+</div>
+
+
+<script>
+$(".section").on('click', function(){
+	$(this).toggleClass('close');
+	console.log(this);
+	console.log($(this));
+});
+
+
+</script>
+
+</body>
+</html>
