@@ -32,6 +32,65 @@
 
 </div>
 
+
+
+<div class="container">
+
+	<form>
+		
+		<h1>Padre</h1>
+		<select name="parent">
+			<option value="-" selected>Seleccione</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+
+
+		<h1>Hijo</h1>
+		<select name="children">
+			
+		</select>
+	
+	</form>
+
+</div>
+
+
+
+
+
+<div class="container">
+
+	<form name="registro">
+		
+		<h1>Formulario de Registro</h1>
+		
+		<label for="nombre">Ingresa tu nombre:<br>
+			<input type="text" name="nombre" id="nombre">
+		</label>
+		
+		<br>
+
+		<label for="apellido">Ingresa tu apellido:<br>
+			<input type="text" name="apellido" id="apellido">
+		</label>
+		
+		<br>
+
+		<label for="email">Ingresa tu email:<br>
+			<input type="text" name="email" id="email">
+		</label>
+
+		<br>
+
+		<input type="submit" value="Enviar">
+	
+	</form>
+
+</div>
+
+
 <script>
 
 var elements = [];
@@ -60,6 +119,33 @@ $(".section").on('click', function(){
 	$(p).toggleClass('close');
 });
 
+
+$("select[name=parent]").on('change', function(){
+	var selected = $(this).val();
+	var opciones_select_2 = "";
+
+	$(".select[name=children]").find("option").remove();
+
+	for(var i = 1; i < 4; i++){
+		opciones_select_2 += '<option value="'+i+'">'+selected + " - " + i + '</option>';
+	}
+
+	$('select[name=children]').html(opciones_select_2);
+});
+
+
+
+$("form[name=registro]").on("submit", function(e){
+	var email = $("input[name=email]").val();
+
+	if (email != "" && email.indexOf("@") != -1) {
+		alert("Form Enviado");
+	} else {
+		alert("Ingrese un email correcto");
+		e.preventDefault();
+		e.stopPropagation();
+	}
+})
 
 </script>
 
