@@ -8,30 +8,56 @@
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"> </script>
 	<style>
 		.tab{display:block;}
-		.close{display: none;}
+		.section {padding: 20px; border: 1px solid red; cursor: pointer;}
+		.close {display: none; transition: .2s;}
+		.undo { display: inline-block; padding: 10px; background: blue; color: white; margin: 0 10px; cursor: pointer;}
 	</style>
 </head>
 <body>
 
-<div class="section">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
-</div>
-
-<div class="section">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
-
-</div>
+<div class="container">
 
 <div class="section">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
 </div>
 
+<div class="section">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+
+</div>
+
+<div class="section">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis perferendis blanditiis, ipsa, qui quidem recusandae nihil nostrum placeat at pariatur modi obcaecati culpa quis repudiandae inventore, provident quia assumenda reprehenderit.</p>
+</div>
+
+</div>
 
 <script>
+
+var elements = [];
+/*
 $(".section").on('click', function(){
+	elements.push($(this));
+	var target = $(event.target);
+	console.log(target);
+
 	$(this).toggleClass('close');
 	console.log(this);
 	console.log($(this));
+
+	$(".container").append('<a class="undo" data-section="test">Undo</a>');
+});
+
+$(".undo").on('click', function(){
+	var section = $(this).attr('data-section');
+
+	console.log("test");
+});
+*/
+
+$(".section").on('click', function(){
+	var p = $(this).find("p");
+	$(p).toggleClass('close');
 });
 
 
